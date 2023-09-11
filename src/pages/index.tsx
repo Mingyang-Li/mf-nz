@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Header from '@/components/Header';
 import { motion } from 'framer-motion';
+import Header from '@/components/header';
 
 const Home = () => {
   return (
