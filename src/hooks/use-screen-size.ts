@@ -1,10 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useState, useEffect } from 'react';
 
 export const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  let initDimensions = {
+    width: 0,
+    height: 0,
+  }
+  if (typeof window !== "undefined") {
+    initDimensions = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    }
+  }
+  const [screenSize, setScreenSize] = useState(initDimensions);
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,7 +24,6 @@ export const useScreenSize = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('resize', handleResize);
     };
