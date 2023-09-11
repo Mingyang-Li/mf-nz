@@ -1,13 +1,14 @@
 {
   "name": "mf-nz",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "start": "next start",
     "lint": "next lint",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "start": "next start"
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.6.0",
@@ -32,6 +33,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.13",
+    "husky": "^8.0.3",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.1",
