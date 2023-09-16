@@ -41,7 +41,7 @@ const HeaderNavMenu: React.FC = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25 }}
               className="fixed top-0 right-0 h-screen w-3/4 bg-white z-50 p-8"
             >
               <ul>

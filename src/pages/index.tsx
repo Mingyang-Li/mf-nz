@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import Header from '@/components/header';
 import NavGpt from '@/components/nav-gpt';
 
 const Home = () => {
