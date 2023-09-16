@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Header from '@/components/header';
+import NavGpt from '@/components/nav-gpt';
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
         <meta name="description" />
         <link rel="icon" href="/logo-square.jpg" />
       </Head>
-      <Header />
+      {/* <Header /> */}
+      <NavGpt />
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <motion.div
           animate={{ y: '0%' }}
