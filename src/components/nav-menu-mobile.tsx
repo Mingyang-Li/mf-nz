@@ -20,16 +20,19 @@ const NavMenuMobile: React.FC = () => {
         onClick={toggleMenu}
       >
         <span
-          className={`block w-6 h-1 mb-1 bg-gray-700 transition-transform transform-gpu duration-300 ${isOpen ? 'rotate-45 translate-y-1' : 'rotate-0'
-            }`}
+          className={`block w-6 h-1 mb-1 bg-gray-700 transition-transform transform-gpu duration-300 ${
+            isOpen ? 'rotate-45 translate-y-1' : 'rotate-0'
+          }`}
         ></span>
         <span
-          className={`block w-6 h-1 mb-1 bg-gray-700 transition-opacity ${isOpen ? 'opacity-0' : 'opacity-100'
-            }`}
+          className={`block w-6 h-1 mb-1 bg-gray-700 transition-opacity ${
+            isOpen ? 'opacity-0' : 'opacity-100'
+          }`}
         ></span>
         <span
-          className={`block w-6 h-1 bg-gray-700 transition-transform transform-gpu duration-300 ${isOpen ? '-rotate-45 -translate-y-1' : 'rotate-0'
-            }`}
+          className={`block w-6 h-1 bg-gray-700 transition-transform transform-gpu duration-300 ${
+            isOpen ? '-rotate-45 -translate-y-1' : 'rotate-0'
+          }`}
         ></span>
       </button>
       <AnimatePresence>
@@ -44,7 +47,10 @@ const NavMenuMobile: React.FC = () => {
             >
               <ul>
                 {menuItems.map((d, _i) => (
-                  <li key={_i} className="py-2 px-4 hover:bg-gray-100 text-gray-900">
+                  <li
+                    key={_i}
+                    className="py-2 px-4 hover:bg-gray-100 text-gray-900"
+                  >
                     {d.title}
                     {/* <a href={d.path} target={d.path.includes('https') ? '_blank' : ''}>{d.title}</a> */}
                   </li>

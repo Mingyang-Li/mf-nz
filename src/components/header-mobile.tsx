@@ -12,15 +12,18 @@ const Header: FC = () => {
       setIsScrollingDown(currentScrollY > prevScrollY);
       setPrevScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [prevScrollY]);
 
   return (
-    <header className={`bg-gray-800 text-white py-4 flex justify-between items-center transition-all duration-300 ${isScrollingDown ? "-translate-y-full" : "translate-y-0"
-      }`}>
+    <header
+      className={`bg-gray-800 text-white py-4 flex justify-between items-center transition-all duration-300 ${
+        isScrollingDown ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
       <div className="ml-4">
         <Image
           src={'/logo-square.jpg'}

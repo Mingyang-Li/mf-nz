@@ -46,7 +46,9 @@ const NavMenuMobileGpt: React.FC = () => {
               className="fixed top-0 right-0 h-screen w-3/4 bg-white z-50 p-8"
             >
               <ul>
-                <li className="py-2 px-4 hover:bg-gray-100 text-gray-900">Home</li>
+                <li className="py-2 px-4 hover:bg-gray-100 text-gray-900">
+                  Home
+                </li>
                 <li className="py-2 px-4 hover:bg-gray-100">About</li>
                 <li className="py-2 px-4 hover-bg-gray-100">Services</li>
                 <li className="py-2 px-4 hover:bg-gray-100">Portfolio</li>

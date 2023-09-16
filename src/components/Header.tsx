@@ -22,17 +22,20 @@ const Header: FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       // Clean up the event listener when the component unmounts
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [handleScroll]);
 
   return (
-    <header className={`bg-gray-800 text-white py-4 flex justify-between items-center transition-all duration-300 ${isScrollingDown ? "-translate-y-full" : "translate-y-0"
-      }`}>
+    <header
+      className={`bg-gray-800 text-white py-4 flex justify-between items-center transition-all duration-300 ${
+        isScrollingDown ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
       <div className="ml-4">
         {/* Your logo image */}
         <Image
