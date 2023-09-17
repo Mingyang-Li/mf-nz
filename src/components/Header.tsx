@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { menuItems } from '@/constants/menu-items';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
@@ -43,27 +44,38 @@ const Header = () => {
             objectFit="contain"
           />
         </div>
-        {isMobileMenuOpen ? (
-          <button
-            onClick={closeMobileMenu}
-            className="lg:hidden text-3xl text-white hover:text-gray-400 focus:outline-none absolute top-4 right-4 z-50"
+        <motion.button
+          onClick={toggleMobileMenu}
+          className="lg:hidden text-3xl text-white hover:text-gray-400 focus:outline-none relative"
+          style={{ zIndex: 9999 }}
+        >
+          <motion.div
+            className={`menu-icon ${isMobileMenuOpen ? 'open' : ''}`}
+            initial={false}
           >
-            ✕
-          </button>
-        ) : (
-          <button
-            onClick={toggleMobileMenu}
-            className="lg:hidden text-3xl text-white hover:text-gray-400 focus:outline-none"
-          >
-            ☰
-          </button>
-        )}
+            <motion.span
+              className="block w-full h-px bg-white mb-2"
+              initial={false}
+              animate={{ rotate: isMobileMenuOpen ? 45 : 0 }}
+            ></motion.span>
+            <motion.span
+              className="block w-full h-px bg-white mb-2"
+              initial={false}
+              animate={{ height: isMobileMenuOpen ? 0 : 1 }}
+            ></motion.span>
+            <motion.span
+              className="block w-5 h-px bg-white"
+              initial={false}
+              animate={{ rotate: isMobileMenuOpen ? -45 : 0 }}
+            ></motion.span>
+          </motion.div>
+        </motion.button>
         <nav
           className={`${
             isMobileMenuOpen
               ? 'translate-y-0'
               : '-translate-y-full lg:translate-y-0 lg:flex lg:space-x-6'
-          } absolute lg:static top-0 left-0 w-full lg:w-auto h-screen lg:h-auto bg-gray-800 text-white transition-transform duration-300`}
+          } absolute lg:static top-0 left-0 w-full lg:w-auto h-screen lg:h-auto bg-gray-800 text-white transition-transform duration-300 z-10`}
         >
           <ul className="lg:flex lg:space-x-6 lg:mt-0 mt-4 flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0">
             {menuItems.map((d, _i) => (
@@ -79,11 +91,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// {
-//   menuItems.map((d, _i) => (
-//     <Link key={_i} href={d.path}>
-//       {d.title}
-//     </Link>
-//   ))
-// }
