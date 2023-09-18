@@ -73,7 +73,7 @@ const Header = () => {
               : '-translate-y-full lg:translate-y-0 lg:flex lg:space-x-6'
           } absolute lg:static top-0 left-0 w-full lg:w-auto h-screen lg:h-auto bg-gray-800 text-white transition-transform duration-300 z-10`}
         >
-          <ul className="lg:flex lg:space-x-6 lg:mt-0 mt-4 flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0">
+          <ul className="lg:flex lg:space-x-6 lg:mt-0 mt-4 flex flex-col justify-center h-screen lg:h-full lg:flex-row items-center space-y-6 lg:space-y-0">
             {menuItems.map((d, _i) => (
               <Link key={_i} href={d.path}>
                 {d.title}
